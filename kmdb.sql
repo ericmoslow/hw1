@@ -131,12 +131,12 @@ CREATE TABLE movies (
 CREATE TABLE actors (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     first_name TEXT,
-    last_name TEXT
+    last_name TEXT,
+    character_id TEXT
 );
 
 CREATE TABLE characters (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    actor_id INTEGER,
     movie_id INTEGER,
     first_name TEXT,
     last_name TEXT
