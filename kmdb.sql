@@ -270,7 +270,7 @@ INSERT INTO actors (
     last_name)
     VALUES (
         "Alfred",
-        "Pennybottom"
+        "Pennyworth"
     );
      INSERT INTO characters (
     first_name,
@@ -335,6 +335,8 @@ INSERT INTO actors (
 
 -- The SQL statement for the movies output
 -- TODO!
+
+SELECT title, year, mpaa_rating, studio FROM movies;
 
 -- Prints a header for the cast output
 .print ""
