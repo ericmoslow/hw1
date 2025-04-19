@@ -258,6 +258,76 @@ INSERT INTO actors (
         "Anne",
         "Hathaway"
     );
+     INSERT INTO characters (
+    first_name,
+    last_name)
+    VALUES (
+        "Bruce",
+        "Wayne"
+    );
+     INSERT INTO characters (
+    first_name,
+    last_name)
+    VALUES (
+        "Alfred",
+        "Pennybottom"
+    );
+     INSERT INTO characters (
+    first_name,
+    last_name)
+    VALUES (
+        "Ra's",
+        "Al Ghul"
+    );
+     INSERT INTO characters (
+    first_name,
+    last_name)
+    VALUES (
+        "Rachel",
+        "Dawes"
+    );
+     INSERT INTO characters (
+    first_name,
+    last_name)
+    VALUES (
+        "Commissioner",
+        "Gordon"
+    );
+     INSERT INTO characters (
+    first_name,
+    last_name)
+    VALUES (
+        "Joke",
+        ""
+    );
+     INSERT INTO characters (
+    first_name,
+    last_name)
+    VALUES (
+        "Harvey",
+        "Dent"
+    );
+     INSERT INTO characters (
+    first_name,
+    last_name)
+    VALUES (
+        "Bane",
+        ""
+    );
+     INSERT INTO characters (
+    first_name,
+    last_name)
+    VALUES (
+        "John",
+        "Blake"
+    );
+     INSERT INTO characters (
+    first_name,
+    last_name)
+    VALUES (
+        "Selina",
+        "Kyle"
+    );
 -- Prints a header for the movies output
 .print "Movies"
 .print "======"
