@@ -151,6 +151,7 @@ CREATE TABLE appearances (
     actor_id INTEGER,
     character_id INTEGER
 );
+
 -- Insert data into your database that reflects the sample data shown above
 -- Use hard-coded foreign key IDs when necessary
 -- TODO!
