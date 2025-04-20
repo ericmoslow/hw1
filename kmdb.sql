@@ -131,22 +131,21 @@ CREATE TABLE movies (
     title TEXT,
     year TEXT,
     mpaa_rating TEXT,
-    studio_id TEXT
+    studio_id INTEGER
 );
 
 CREATE TABLE actors (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    first_name TEXT,
-    last_name TEXT,
-    character_id TEXT
+    full_name TEXT,
+    character_id INTEGER,
+    movie_id INTEGER
 );
 
 CREATE TABLE characters (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    movie_id INTEGER,
-    first_name TEXT,
-    last_name TEXT
+    full_name TEXT,
 );
+
 -- Insert data into your database that reflects the sample data shown above
 -- Use hard-coded foreign key IDs when necessary
 -- TODO!
@@ -163,41 +162,40 @@ INSERT INTO movies (
     mpaa_rating,
     studio_id)
     VALUES 
-    ("Batman Begins", "2005", "PG-13", "1"),
-    ("The Dark Knight", "2008", "PG-13", "1"),
-    ("The Dark Knight Rises", "2012", "PG-13", "1")
+    ("Batman Begins", "2005", "PG-13", 1),
+    ("The Dark Knight", "2008", "PG-13", 1),
+    ("The Dark Knight Rises", "2012", "PG-13", 1)
     ;
 
 INSERT INTO actors (
-    first_name,
-    last_name)
+    full_name)
     VALUES 
-    ("Christian","Bale"),
-    ("Michael","Caine"),
-    ("Liam","Neeson"),
-    ("Katie","Holmes"),
-    ("Gary","Oldman"),
-    ("Heath","Ledger"),
-    ("Aaron","Eckhart"),
-    ("Maggie","Gyllenhaal"),
-    ("Tom","Hardy"),
-    ("Joseph","Gordon-Levitt"),
-    ("Anne","Hathaway")
+    ("Christian Bale"),
+    ("Michael Caine"),
+    ("Liam Neeson"),
+    ("Katie Holmes"),
+    ("Gary Oldman"),
+    ("Heath Ledger"),
+    ("Aaron Eckhart"),
+    ("Maggie Gyllenhaal"),
+    ("Tom Hardy"),
+    ("Joseph Gordon-Levitt"),
+    ("Anne Hathaway")
     ;
+
      INSERT INTO characters (
-    first_name,
-    last_name)
+    full_name)
     VALUES 
-    ("Bruce","Wayne"),
-    ("Alfred",""),
-    ("Ra's","Al Ghul"),
-    ("Rachel","Dawes"),
-    ("Commissioner","Gordon"),
-    ("Joker",""),
-    ("Harvey","Dent"),
-    ("Bane",""),
-    ("John","Blake"),
-    ("Selina","Kyle")
+    ("Bruce Wayne"),
+    ("Alfred"),
+    ("Ra's Al Ghul"),
+    ("Rachel Dawes"),
+    ("Commissioner Gordon"),
+    ("Joker"),
+    ("Harvey Dent"),
+    ("Bane"),
+    ("John Blake"),
+    ("Selina Kyle")
     ;
     
 -- Prints a header for the movies output
@@ -207,9 +205,11 @@ INSERT INTO actors (
 
 -- The SQL statement for the movies output
 -- TODO!
+
 SELECT movies.title, movies.year, movies.mpaa_rating, studios.name FROM movies
 INNER JOIN studios ON studios.id = movies.studio_id
 ORDER BY year;
+
 -- Prints a header for the cast output
 .print ""
 .print "Top Cast"
@@ -219,3 +219,8 @@ ORDER BY year;
 
 -- The SQL statement for the cast output
 -- TODO!
+
+SELECT movies.title, actors.full_name, characters.full_name FROM movies
+INNER JOIN actors ON movies.id = actors.movie_id
+INNER JOIN characters ON characters.id = actors.character_id
+ORDER BY movies.title
