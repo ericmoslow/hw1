@@ -207,7 +207,9 @@ INSERT INTO actors (
 
 -- The SQL statement for the movies output
 -- TODO!
-SELECT * FROM characters;
+SELECT movies.title, movies.year, movies.mpaa_rating, studios.name FROM movies
+INNER JOIN studios ON studios.id = movies.studio_id
+ORDER BY year;
 -- Prints a header for the cast output
 .print ""
 .print "Top Cast"
