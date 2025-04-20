@@ -171,150 +171,35 @@ INSERT INTO movies (
 INSERT INTO actors (
     first_name,
     last_name)
-    VALUES (
-        "Christian",
-        "Bale"
-    );
-INSERT INTO actors (
-    first_name,
-    last_name)
-    VALUES (
-        "Michael",
-        "Caine"
-    );
-    INSERT INTO actors (
-    first_name,
-    last_name)
-    VALUES (
-        "Liam",
-        "Neeson"
-    );
-    INSERT INTO actors (
-    first_name,
-    last_name)
-    VALUES (
-        "Katie",
-        "Holmes"
-    );
-    INSERT INTO actors (
-    first_name,
-    last_name)
-    VALUES (
-        "Gary",
-        "Oldman"
-    );
-    INSERT INTO actors (
-    first_name,
-    last_name)
-    VALUES (
-        "Heath",
-        "Ledger"
-    );
-INSERT INTO actors (
-    first_name,
-    last_name)
-    VALUES (
-        "Aaron",
-        "Eckhart"
-    );
-    INSERT INTO actors (
-    first_name,
-    last_name)
-    VALUES (
-        "Maggie",
-        "Gyllenhaal"
-    );
-    INSERT INTO actors (
-    first_name,
-    last_name)
-    VALUES (
-        "Tom",
-        "Hardy"
-    );
-     INSERT INTO actors (
-    first_name,
-    last_name)
-    VALUES (
-        "Joseph",
-        "Gordon-Levitt"
-    );
-     INSERT INTO actors (
-    first_name,
-    last_name)
-    VALUES (
-        "Anne",
-        "Hathaway"
-    );
+    VALUES 
+    ("Christian","Bale"),
+    ("Michael","Caine"),
+    ("Liam","Neeson"),
+    ("Katie","Holmes"),
+    ("Gary","Oldman"),
+    ("Heath","Ledger"),
+    ("Aaron","Eckhart"),
+    ("Maggie","Gyllenhaal"),
+    ("Tom","Hardy"),
+    ("Joseph","Gordon-Levitt"),
+    ("Anne","Hathaway")
+    ;
      INSERT INTO characters (
     first_name,
     last_name)
-    VALUES (
-        "Bruce",
-        "Wayne"
-    );
-     INSERT INTO characters (
-    first_name,
-    last_name)
-    VALUES (
-        "Alfred",
-        "Pennyworth"
-    );
-     INSERT INTO characters (
-    first_name,
-    last_name)
-    VALUES (
-        "Ra's",
-        "Al Ghul"
-    );
-     INSERT INTO characters (
-    first_name,
-    last_name)
-    VALUES (
-        "Rachel",
-        "Dawes"
-    );
-     INSERT INTO characters (
-    first_name,
-    last_name)
-    VALUES (
-        "Commissioner",
-        "Gordon"
-    );
-     INSERT INTO characters (
-    first_name,
-    last_name)
-    VALUES (
-        "Joke",
-        ""
-    );
-     INSERT INTO characters (
-    first_name,
-    last_name)
-    VALUES (
-        "Harvey",
-        "Dent"
-    );
-     INSERT INTO characters (
-    first_name,
-    last_name)
-    VALUES (
-        "Bane",
-        ""
-    );
-     INSERT INTO characters (
-    first_name,
-    last_name)
-    VALUES (
-        "John",
-        "Blake"
-    );
-     INSERT INTO characters (
-    first_name,
-    last_name)
-    VALUES (
-        "Selina",
-        "Kyle"
-    );
+    VALUES 
+    ("Bruce","Wayne"),
+    ("Alfred",""),
+    ("Ra's","Al Ghul"),
+    ("Rachel","Dawes"),
+    ("Commissioner","Gordon"),
+    ("Joker",""),
+    ("Harvey","Dent"),
+    ("Bane",""),
+    ("John","Blake"),
+    ("Selina","Kyle")
+    ;
+    
 -- Prints a header for the movies output
 .print "Movies"
 .print "======"
@@ -322,7 +207,7 @@ INSERT INTO actors (
 
 -- The SQL statement for the movies output
 -- TODO!
-SELECT * FROM movies;
+SELECT * FROM characters;
 -- Prints a header for the cast output
 .print ""
 .print "Top Cast"
