@@ -113,6 +113,7 @@
 -- Drop existing tables, so you'll start fresh each time this script is run.
 -- TODO!
 
+DROP TABLE IF EXISTS studios;
 DROP TABLE IF EXISTS movies;
 DROP TABLE IF EXISTS actors;
 DROP TABLE IF EXISTS characters;
@@ -120,12 +121,17 @@ DROP TABLE IF EXISTS characters;
 -- Create new tables, according to your domain model
 -- TODO!
 
+CREATE TABLE studios (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT
+);
+
 CREATE TABLE movies (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     title TEXT,
     year TEXT,
     mpaa_rating TEXT,
-    studio TEXT
+    studio_id TEXT
 );
 
 CREATE TABLE actors (
@@ -145,15 +151,9 @@ CREATE TABLE characters (
 -- Use hard-coded foreign key IDs when necessary
 -- TODO!
 
-INSERT INTO movies (
-    title,
-    year,
-    mpaa_rating,
-    studio)
+INSERT INTO studios (
+    name)
     VALUES (
-        "Batman Begins",
-        "2005",
-        "PG-13",
         "Warner Bros"
     );
 
@@ -161,24 +161,36 @@ INSERT INTO movies (
     title,
     year,
     mpaa_rating,
-    studio)
+    studio_id)
+    VALUES (
+        "Batman Begins",
+        "2005",
+        "PG-13",
+        "1"
+    );
+
+INSERT INTO movies (
+    title,
+    year,
+    mpaa_rating,
+    studio_id)
     VALUES (
         "The Dark Knight",
         "2008",
         "PG-13",
-        "Warner Bros"
+        "1"
     );
 
     INSERT INTO movies (
     title,
     year,
     mpaa_rating,
-    studio)
+    studio_id)
     VALUES (
         "The Dark Knight Rises",
         "2012",
         "PG-13",
-        "Warner Bros"
+        "1"
     );
 
 INSERT INTO actors (
@@ -336,8 +348,7 @@ INSERT INTO actors (
 -- The SQL statement for the movies output
 -- TODO!
 
-SELECT title, year, mpaa_rating, studio FROM movies;
-
+;
 -- Prints a header for the cast output
 .print ""
 .print "Top Cast"
