@@ -117,6 +117,7 @@ DROP TABLE IF EXISTS studios;
 DROP TABLE IF EXISTS movies;
 DROP TABLE IF EXISTS actors;
 DROP TABLE IF EXISTS characters;
+DROP TABLE IF EXISTS appearances;
 
 -- Create new tables, according to your domain model
 -- TODO!
@@ -136,16 +137,20 @@ CREATE TABLE movies (
 
 CREATE TABLE actors (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    full_name TEXT,
-    character_id INTEGER,
-    movie_id INTEGER
+    full_name TEXT
 );
 
 CREATE TABLE characters (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    full_name TEXT,
+    character_name TEXT
 );
 
+CREATE TABLE appearances (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    movie_id INTEGER,
+    actor_id INTEGER,
+    character_id INTEGER
+);
 -- Insert data into your database that reflects the sample data shown above
 -- Use hard-coded foreign key IDs when necessary
 -- TODO!
@@ -168,23 +173,23 @@ INSERT INTO movies (
     ;
 
 INSERT INTO actors (
-    full_name)
+    full_name, character_id)
     VALUES 
-    ("Christian Bale"),
-    ("Michael Caine"),
-    ("Liam Neeson"),
-    ("Katie Holmes"),
-    ("Gary Oldman"),
-    ("Heath Ledger"),
-    ("Aaron Eckhart"),
-    ("Maggie Gyllenhaal"),
-    ("Tom Hardy"),
-    ("Joseph Gordon-Levitt"),
-    ("Anne Hathaway")
+    ("Christian Bale", 1),
+    ("Michael Caine", 2),
+    ("Liam Neeson", 3),
+    ("Katie Holmes", 4),
+    ("Gary Oldman", 5),
+    ("Heath Ledger", 6),
+    ("Aaron Eckhart", 7),
+    ("Maggie Gyllenhaal", 4),
+    ("Tom Hardy", 8),
+    ("Joseph Gordon-Levitt", 9),
+    ("Anne Hathaway", 10)
     ;
 
      INSERT INTO characters (
-    full_name)
+    character_name)
     VALUES 
     ("Bruce Wayne"),
     ("Alfred"),
@@ -216,11 +221,10 @@ ORDER BY year;
 .print "========"
 .print ""
 
-
 -- The SQL statement for the cast output
 -- TODO!
 
 SELECT movies.title, actors.full_name, characters.full_name FROM movies
-INNER JOIN actors ON movies.id = actors.movie_id
+INNER JOIN actors ON movies.id = actors.movie_id  
 INNER JOIN characters ON characters.id = actors.character_id
-ORDER BY movies.title
+ORDER BY movies.title;
