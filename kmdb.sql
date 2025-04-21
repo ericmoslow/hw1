@@ -116,7 +116,7 @@
 DROP TABLE IF EXISTS studios;
 DROP TABLE IF EXISTS movies;
 DROP TABLE IF EXISTS actors;
-DROP TABLE IF EXISTS characters;
+DROP TABLE IF EXISTS roles;
 DROP TABLE IF EXISTS credits;
 
 -- Create new tables, according to your domain model
@@ -140,16 +140,16 @@ CREATE TABLE actors (
     full_name TEXT
 );
 
-CREATE TABLE characters (
+CREATE TABLE roles (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    character_name TEXT
+    role_name TEXT
 );
 
 CREATE TABLE credits (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     movie_id INTEGER,
     actor_id INTEGER,
-    character_id INTEGER
+    role_id INTEGER
 );
 
 -- Insert data into your database that reflects the sample data shown above
@@ -183,7 +183,7 @@ INSERT INTO actors (full_name)
     ("Anne Hathaway")
     ;
 
-     INSERT INTO characters (character_name)
+     INSERT INTO roles (role_name)
     VALUES 
     ("Bruce Wayne"),
     ("Alfred"),
@@ -198,7 +198,7 @@ INSERT INTO actors (full_name)
     ;
     
     INSERT INTO credits 
-    (movie_id, actor_id, character_id)
+    (movie_id, actor_id, role_id)
     VALUES 
 
  -- Batman Begins
@@ -245,9 +245,9 @@ ORDER BY year;
 -- The SQL statement for the cast output
 -- TODO!
 
-SELECT movies.title, actors.full_name, characters.character_name FROM movies
+SELECT movies.title, actors.full_name, roles.role_name FROM movies
 INNER JOIN credits ON credits.movie_ID = movies.id
-INNER JOIN characters ON credits.character_id = characters.id
+INNER JOIN roles ON credits.role_id = roles.id
 INNER JOIN actors ON credits.actor_id = actors.id
 ORDER BY movies.year, credits.id
 ;
