@@ -178,7 +178,7 @@ INSERT INTO actors (full_name)
     ("Heath Ledger"),
     ("Aaron Eckhart"),
     ("Maggie Gyllenhaal"),
-    ("Tom Hardy",
+    ("Tom Hardy"),
     ("Joseph Gordon-Levitt"),
     ("Anne Hathaway")
     ;
