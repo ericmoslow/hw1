@@ -202,7 +202,7 @@ INSERT INTO actors (full_name)
     VALUES 
 
  -- Batman Begins
-(1, 1, 1), -- Christian Bale Batman
+(1, 1, 1), -- Christian Bale Bruce Wayne
 (1, 2, 2), -- Michael Caine Alfred
 (1, 3, 3),  -- Liam Neeson Ra's Al Ghul
 (1, 4, 4),  -- Katie Holmes Rachel Dawes
